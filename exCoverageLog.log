@@ -1,3 +1,5 @@
+
+# This shows the first 25 entries of coverage of a 2560000 byte file. 1 indicates a hit, 0 indicates miss of the corresponding addresses. 
 PC			visited?
 
 [0xadd]		0
@@ -26,3 +28,6 @@ PC			visited?
 [0x9458]		1
 [0x945c]		1
 [0x9460]		1
+.....
+.....
+....
