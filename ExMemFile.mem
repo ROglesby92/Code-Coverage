@@ -1,0 +1,35 @@
+# Example of the start of a found content section and the data after we store for this dump, only shows the first 6 entries
+# The Memory files are very large, around 250MB.
+
+
+Content of section .SplitRom (#1) size=0x1087c start=0x89910
+__Xmul32x16_check4_to_any:
+9400: 206a0280                 lr	%r0,[%status32]
+9404: 20460180                 bic	%r0,%r0,6
+9408: 202107c0                 j.d	[%blink]
+940c: 20290000                 flag	%r0
+_disable1:
+9410: 206a0280                 lr	%r0,[%status32]
+9414: 20460080                 bic	%r0,%r0,2
+9418: 202107c0                 j.d	[%blink]
+941c: 20290000                 flag	%r0
+_disable2:
+9420: 206a0280                 lr	%r0,[%status32]
+9424: 20460100                 bic	%r0,%r0,4
+9428: 202107c0                 j.d	[%blink]
+942c: 20290000                 flag	%r0
+_enable:
+9430: 206a0280                 lr	%r0,[%status32]
+9434: 20450180                 or	%r0,%r0,6
+9438: 202107c0                 j.d	[%blink]
+943c: 20290000                 flag	%r0
+_enable1:
+9440: 206a0280                 lr	%r0,[%status32]
+9444: 20450080                 or	%r0,%r0,2
+9448: 202107c0                 j.d	[%blink]
+944c: 20290000                 flag	%r0
+_enable2:
+9450: 206a0280                 lr	%r0,[%status32]
+9454: 20450100                 or	%r0,%r0,4
+9458: 202107c0                 j.d	[%blink]
+945c: 20290000                 flag	%r0
