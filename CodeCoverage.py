@@ -207,18 +207,12 @@ def beginEvaluation(dFile, cFile, verbose=False, selfFunc='UNSELECTED', toCSV='U
         if func_was_visited == 1:
             # If all nodes connected
             if fnAdr_ll[x][4] == fnAdr_ll[x][3]:
-                ###################################################################################################
-                # TODO RYAN
-                #todo Ryan, I think this 'All Hit' string should be replace with a simple number vs a string.
-                # This is called a lot so as implemented, this string will get called a lot.  Perhaps replacing it
-                #  with ALL_HIT = 0, PARTIAL = 1, MISS = 3 or something like that.
-                #   This reduces the number of bytes moved around.
-                ####################################################################################################
+               
                 fnAdr_ll[x][5] = 'All Hit'
 
-                # The comma after this print prevents a new line from being issued
+               
                 set_color(FOREGROUND_GREEN | FOREGROUND_INTENSITY)
-                #print (Fore.RED + Back.GREEN + 'COVERED'),
+               
                 print ('COVERED'),
                 print(' %30s : %X ~ %X  Total Nodes: %3d | Good Nodes: %3d' % (
                     tmp_function_name, int(str(tmp_function_adr_start), 16), int(str(tmp_function_adr_end), 16),
@@ -228,7 +222,7 @@ def beginEvaluation(dFile, cFile, verbose=False, selfFunc='UNSELECTED', toCSV='U
             else:
                 # Partial nodes hit
                 fnAdr_ll[x][5] = "Partial Coverage"
-                #print(Fore.BLUE + Back.YELLOW + 'PARTIAL'), # The comma at the end prevents new line
+             
                 print('PARTIAL'),  # The comma at the end prevents new line
                 print(' %30s : %X ~ %X  Total Nodes: %3d | Good Nodes: %3d' % (
                     tmp_function_name, int(str(tmp_function_adr_start), 16), int(str(tmp_function_adr_end), 16),
@@ -239,7 +233,7 @@ def beginEvaluation(dFile, cFile, verbose=False, selfFunc='UNSELECTED', toCSV='U
 
         else:
             fnAdr_ll[x][5] = 'Miss'
-            #print(Fore.CYAN + Back.RED + 'MISSED '),
+       
             print('MISSED '),
             print(' %30s : %X ~ %X  Total Nodes: %3d' % (
                 tmp_function_name, int(str(tmp_function_adr_start), 16), int(str(tmp_function_adr_end), 16),
@@ -258,11 +252,7 @@ def beginEvaluation(dFile, cFile, verbose=False, selfFunc='UNSELECTED', toCSV='U
         print('Total ' + Fore.YELLOW + Back.RED + 'MISSED ' + Style.RESET_ALL + ' Addresses = %d%% ' % ((float(total_bad_nodes) / total_node_counter) * 100))
         print('Total ' + Fore.RED + Back.GREEN  + 'COVERED' + Style.RESET_ALL + ' Addresses = %d%%  ' % ((float(total_good_nodes) / total_node_counter) * 100))
 
-        #print("\033[1;32m" + 'Total Good Nodes = ' + str(total_good_nodes) + "  ~~~~  " + str(
-        #    round((100 * (total_good_nodes / total_node_counter)), 3)) + '%' + "\033[1;m")
-
-        #for i in range(256):
-        #    print color('Color #%d' % i, fg=i)
+    
 
     if selfFunc != 'UNSELECTED':
         for list in fnAdr_ll:
